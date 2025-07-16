@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editor.js Text Color Plugin</title>
+
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #fafafa;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      body.dark-mode {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+      }
+
+      #editorjs {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s;
+      }
+
+      body.dark-mode #editorjs {
+        background-color: #2c2c2c;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .theme-switcher {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 8px 16px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 10001;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@2.30.8/dist/editorjs.umd.min.js"></script>
+    <script src="../dist/bundle.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/paragraph@2.11.7/dist/paragraph.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@2.8.8/dist/header.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@2.0.8/dist/editorjs-list.umd.min.js"></script>
+  </head>
+
+  <body>
+    <div id="editorjs"></div>
+
+    <script>
+      let editor;
+
+      function initializeEditor(theme) {
+        if (editor) {
+          editor.destroy();
+        }
+
+        editor = new EditorJS({
+          holder: "editorjs",
+          autofocus: true,
+          placeholder: "Start writing your content here...",
+
+          tools: {
+            paragraph: {
+              class: Paragraph,
+              inlineToolbar: true,
+            },
+            header: {
+              class: Header,
+              inlineToolbar: true,
+            },
+            fontSize: {
+              class: FontSizeTool,
+              config: {
+                fontSizes: [
+                  { size: "12px", label: "Small" },
+                  { size: "14px", label: "Normal" },
+                  { size: "16px", label: "Medium" },
+                  { size: "18px", label: "Large" },
+                  { size: "20px", label: "Extra Large" },
+                  { size: "24px", label: "XXL" },
+                  { size: "28px", label: "XXXL" },
+                  { size: "32px", label: "Huge" },
+                ],
+                defaultSize: "14px",
+              },
+            },
+          },
+        });
+      }
+
+      // Initial load
+      initializeEditor();
+    </script>
+  </body>
+</html>

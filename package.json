@@ -1,5 +1,5 @@
 {
-  "name": "editorjs-font-size",
+  "name": "editorjs-font-size-plugin",
   "version": "2.1.0",
   "description": "An inline tool for changing text size",
   "main": "dist/bundle.js",
@@ -29,9 +29,9 @@
   "author": "M Waleed",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/faqahat/editorjs-font-size-plugin/issues"
+    "url": "https://github.com/Faqahat/editorjs-font-size/issues"
   },
-  "homepage": "https://github.com/faqahat/editorjs-font-size-plugin#readme",
+  "homepage": "https://github.com/Faqahat/editorjs-font-size#readme",
   "devDependencies": {
     "@babel/core": "^7.18.2",
     "@babel/preset-env": "^7.18.2",

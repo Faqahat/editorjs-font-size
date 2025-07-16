@@ -32,7 +32,7 @@ npm install editorjs-font-size
 You can also load the bundled script from the jsDelivr CDN.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/editorjs-font-size@latest/dist/bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/editorjs-font-size-plugin@latest/dist/bundle.js"></script>
 ```
 
 ## Usage

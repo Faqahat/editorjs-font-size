@@ -1,6 +1,6 @@
 {
   "name": "editorjs-font-size",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "description": "An inline tool for changing text size",
   "main": "dist/bundle.js",
   "scripts": {
